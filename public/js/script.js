@@ -78,6 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }else if (conditionText.includes("fog") || conditionText.includes("mist")) {
                     forecast_card.style.backgroundImage = "url('/images/Fog GIF.gif')";
                     forecast_card.classList.add("text-white"); 
+                }else if (conditionText.includes("storm"))) {
+                    forecast_card.style.backgroundImage = "url('/images/bbc africa landscape GIF.gif')";
+                    forecast_card.classList.add("text-white"); 
                 }
                 error_container.classList.add("hidden");
                 cards_container.classList.remove("hidden");
