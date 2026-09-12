@@ -13,8 +13,6 @@ const forcast = (latitude , longtitude, callback) => {
                 temp: response.body.current.temp_c,
                 icon: "https:" + response.body.current.condition.icon
             });
-                    // callback(undefined,  response.body.current.condition.text + " and the temperture is: " + response.body.current.temp_c +"°C")
-
         }
     })
 }
