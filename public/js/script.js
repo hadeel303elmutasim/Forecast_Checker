@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return; 
             }
             
-            const res = await fetch('http://localhost:3000/weather?address=' + encodeURIComponent(address_value));
+            const res = await fetch('/weather?address=' + encodeURIComponent(address_value));
             const data = await res.json();
             console.log("API Data received:", data);
 
