@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the compiled Tailwind CSS file -->
+    <link rel="stylesheet" href="/css/styles.config.css">
+    <title>{{title}}</title>
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+
+    <div class="max-w-4xl mx-auto p-6 rounded-lg shadow-md">
+        <!-- Display basic string data sent from app.js -->
+        <h1 class="text-3xl font-bold text-blue-600 mb-2">Welcome to the <span class="font-semibold text-gray-800">{{title}}</span></h1>
+        
+        <form id="forcast_form" class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6 w-full">
+            <input type="text" id="address" placeholder="Enter location..." class="border border-gray-200 p-4 rounded-lg w-full sm:w-80 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="form_btn" class="border border-gray-200 p-4 rounded-lg bg-slate-600 text-white font-medium shadow-sm hover:bg-slate-700 transition-colors w-full sm:w-auto whitespace-nowrap">
+                Search for the Weather
+            </button>
+        </form>
+
+        <div class="space-y-4">
+            <!-- 1. Country Display Card -->
+            <div id="location_container" class="hidden border border-gray-200 p-4 rounded-lg bg-gray-50 shadow-sm">
+                <p id="location" class="font-semibold text-lg text-gray-800"></p>
+            </div>
+
+            <!-- 2. Weather Results Grid Group wrapper -->
+        <div id="cards_container" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div id="forecast_card" class="border border-gray-200 p-4 rounded-lg bg-gray-50 shadow-sm bg-cover bg-center transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+                <p class="text-sm font-bold uppercase text-current">Forecast Condition</p>
+                <div class="flex items-center space-x-2 mt-2">
+                    <img id="weather_icon" src="" alt="Weather Icon" class="w-12 h-12 hidden">
+                    <p id="forecast" class="font-semibold text-lg text-current"></p>
+                </div>
+            </div>
+            <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 shadow-sm transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+                <p class="text-sm font-bold uppercase text-gray-400">Temperature</p>
+                <p id="temp" class="font-semibold text-lg text-gray-800 mt-1"></p>
+            </div>
+        </div>
+
+            <!-- 3. Separate Error wrapper panel -->
+            <div id="error_container" class="hidden border border-red-200 p-4 rounded-lg bg-red-50 shadow-sm">
+                <p id="error" class="font-semibold text-lg text-red-600"></p>
+            </div>
+        </div>
+    </div>
+    
+<script src="/js/script.js"></script>
+</body>
+</html>
